@@ -9,10 +9,11 @@ var app = new Vue({
     ofertaActual: 50, //pujamaxi
     oferta: 0,
     showDiv: false,
-    money: 506,
+    money: 600,
+    dinero: localStorage.getItem("moneys"),
     buy: [],
     resultado: "",
-
+    date:"",
   },
   methods: {
     // loadCharacters(url) {
@@ -86,18 +87,25 @@ var app = new Vue({
           if (result.isConfirmed) {
             if (this.oferta >= this.ofertaActual) {
               this.ofertaActual = this.oferta;
+
+              localStorage.setItem("moneys", JSON.stringify(this.money));
+              this.money = JSON.parse(localStorage.getItem("moneys"));
               this.money = this.money - this.ofertaActual;
-              this.money = this.money;
-              this.ofertaActual=this.ofertaActual
-              localStorage.setItem("bougth", JSON.stringify(this.buy));
-              this.buy = JSON.parse(localStorage.getItem("bougth") || []);
-              this.buy.push({
+              
+              localStorage.setItem("moneys", JSON.stringify(this.money))
+             
+              this.buy = JSON.parse(localStorage.getItem("bougth"));
+            if(this.buy==null){
+              this.buy=[]
+            }
+                this.buy.push({
                 idcard: this.selectedCharacter.name,
                 precioCompra: this.oferta,
                 imagen:this.selectedCharacter.image,
+                date:this.date,
               });
+              console.log(this.buy)
               localStorage.setItem("bougth", JSON.stringify(this.buy));
-              localStorage.setItem("charact", JSON.stringify(this.characters));
     
             }
             Swal.fire("Bravo", "Tu puja ha pasado a ser primera", "success");
@@ -105,13 +113,10 @@ var app = new Vue({
         });
       }
       this.showDiv = false;
-      localStorage.setItem("charact", JSON.stringify(this.characters));
-      localStorage.setItem("bougth", JSON.stringify(this.buy));
        
     },
   },
 
-  // created() {
-  //   this.getUsers();
-  // },
+  created() {
+  },
 });

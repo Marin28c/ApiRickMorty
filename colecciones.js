@@ -4,6 +4,5 @@ var app = new Vue({
   data: {
       bougths:
       JSON.parse(localStorage.getItem("bougth")),
-
   },
 });

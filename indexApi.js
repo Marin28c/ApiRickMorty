@@ -16,6 +16,7 @@ var app = new Vue({
     date:"",
   },
   methods: {
+    
     // loadCharacters(url) {
     //   fetch(url)
     //     .then((response) => response.json())

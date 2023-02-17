@@ -1,0 +1,44 @@
+<html>
+
+<head>
+    <title>API</title>
+    <link rel="stylesheet" href="http://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.4.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="indexR.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css"
+        integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+
+</head>
+
+<body>
+
+    <ul class="nav nav-pills mb-3" id="pills-tab" role="tablist">
+        <li class="nav-item">
+          <a class="nav-link " id="pills-home-tab" data-toggle="pill" href="index.html" role="tab" aria-controls="pills-home" aria-selected="true">Home</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link active" id="pills-profile-tab" data-toggle="pill" href="coleccion.html" role="tab" aria-controls="pills-profile" aria-selected="false">Profile</a>
+        </li>
+    </ul>
+    <div id="app">
+      <h1>Colecciones</h1>
+      <h1>Tarjetas</h1>
+
+      <div class="cards row g-0"  > 
+        <div class="card" v-for="(bougth, index) in bougths" :key="index" >
+          <img :src="bougth.imagen" :alt="bougth.name">
+          <div class="card-body">
+            <p>{{bougth.idcard}}</p>
+            <p>Precio de compra: {{bougth.precioCompra}}</p>
+            </div>
+        </div>
+      </div>
+
+    </div>
+</body>
+
+<script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+<script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+<script src="colecciones.js"></script>
+<script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+
+</html>

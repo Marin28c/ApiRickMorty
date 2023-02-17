@@ -1,0 +1,133 @@
+.cards {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 1rem;
+}
+
+.card {
+  display: flex;
+  flex-direction: column;
+  border: 1px solid #e78433;
+  border-radius: 5px;
+  overflow: hidden;
+}
+
+.card img {
+  width: 100%;
+  height: auto;
+  border: 1px solid #e78433;
+}
+
+.card-body {
+  padding: 1rem;
+  border: 1px solid #e78433;
+}
+
+#floating-div {
+  position: fixed;
+  top: 50px;
+  margin-left: 30%;
+  width: 500px;
+  height: 300px;
+  background-color: red;
+  border: 9px solid violet;
+  border-radius: 5px;
+  padding: 8px;
+  text-align: center;
+}
+
+#floating-div img {
+  width: 150px;
+  height: 150px;
+  border-radius: 80px;
+  padding: 3px;
+  
+}
+
+#close-button {
+  position: absolute;
+  top: 0px;
+  right: 1px;
+  background-color: transparent;
+  border: none;
+  cursor: pointer;
+  color: azure;
+  font-size: large;
+}
+span{
+  font-size: 20px;
+  color: beige;
+}
+
+.float-div {
+  width: 150px;
+  height: 150px;
+  border-radius: 80px;
+  padding: 1px;
+}.cards {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 1rem;
+}
+
+.card {
+  display: flex;
+  flex-direction: column;
+  border: 1px solid #e78433;
+  border-radius: 5px;
+  overflow: hidden;
+}
+
+.card img {
+  width: 100%;
+  height: auto;
+  border: 1px solid #e78433;
+}
+
+.card-body {
+  padding: 1rem;
+  border: 1px solid #e78433;
+}
+
+#floating-div {
+  position: fixed;
+  top: 50px;
+  margin-left: 30%;
+  width: 500px;
+  height: 300px;
+  background-color: red;
+  border: 9px solid violet;
+  border-radius: 5px;
+  padding: 8px;
+  text-align: center;
+}
+
+#floating-div img {
+  width: 150px;
+  height: 150px;
+  border-radius: 80px;
+  padding: 3px;
+  
+}
+
+#close-button {
+  position: absolute;
+  top: 0px;
+  right: 1px;
+  background-color: transparent;
+  border: none;
+  cursor: pointer;
+  color: azure;
+  font-size: large;
+}
+span{
+  font-size: 20px;
+  color: beige;
+}
+
+.float-div {
+  width: 150px;
+  height: 150px;
+  border-radius: 80px;
+  padding: 1px;
+}

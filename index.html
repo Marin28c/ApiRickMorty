@@ -1,0 +1,81 @@
+<html>
+
+<head>
+    <title>API</title>
+    <link rel="stylesheet" href="http://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.4.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="indexR.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css"
+        integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+
+</head>
+
+<body>
+  <ul class="nav nav-pills mb-3" id="pills-tab" role="tablist">
+  <li class="nav-item">
+    <a class="nav-link active" id="pills-home-tab" data-toggle="pill" href="index.html" role="tab" aria-controls="pills-home" aria-selected="true">Home</a>
+  </li>
+  <li class="nav-item">
+    <a class="nav-link" id="pills-profile-tab" data-toggle="pill" href="coleccion.html" role="tab" aria-controls="pills-profile" aria-selected="false">Profile</a>
+  </li>
+
+</ul>
+    <div id="app" >
+      
+      <button @click="getUsers" class="obt-us">Usuarios</button>
+      <div v-text="money">
+        {{money}}
+      </div>
+<div>
+    <select v-model="gender" class="personalizacion" >
+        <option value="">Todos</option>
+        <option value="Male">Hombres</option>
+        <option value="Female">Mujeres</option>
+        <option value="Genderless">Sin género</option>
+        <option value="unknown">Desconocido</option>
+    </select>
+
+        <h1>Tarjetas</h1>
+        <div class="cards" > 
+          <div class="card" v-for="character in characters" :key="character.id" v-if="gender=='' || character.gender == gender">
+            <img :src="character.image" :alt="character.name">
+            <div class="card-body">
+              <h2 v-text="character.name"></h2>
+              <p >Especie: {{ character.species }}</p>
+              <p>Género: {{ character.gender }}</p>
+              <p>Locación: {{ character.location.name }}</p>
+              <p>Precio: {{ofertaActual}}</p>
+              <button @click="handleBid(character)">Hacer oferta</button>
+            </div>
+          </div>
+        </div>
+
+        <div v-if="showDiv" class="float-div" v-if="subastando">
+
+        <div v-if="subastando" id="floating-div" >
+          <h2>Ofertando por: {{ selectedCharacter.name }}</h2>
+          <img :src="selectedCharacter.image"> 
+          <span> subasta actual es de {{ ofertaActual }}
+           <form @submit.prevent="realizarOferta" class="subas">
+            <label for="oferta">Oferta sugerida:</label>
+            <input type="number" id="oferta" v-model.number="oferta">
+            <button type="submit">Ofertar</button>
+            
+            <button @click="handleBid(character)" id="close-button">X</button>
+          </form>
+        </span>
+        </div>
+      </div>
+      
+      </div>
+        
+
+    </div>
+
+</body>
+
+<script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+<script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+<script src="indexApi.js"></script>
+<script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+
+</html>
